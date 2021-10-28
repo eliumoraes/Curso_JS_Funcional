@@ -18,6 +18,22 @@ const qtdeMuitoGrande = (item) => item.qtde > 1000;
 const itensValidos = carrinho.filter(qtdMaiorQueZero).map(getNome);
 
 console.log(itensValidos);
-console.log(totalItens);
+console.log("Soma de quantidades: ",totalItens);
 
+// Criando meu próprio filter
+Array.prototype.meuFilter = function (fn) {
+    const novoArray = []
+    for (let i = 0; i < this.length; i++) {
+        if (fn(this[i], i, this)) {
+            novoArray.push("--> " + this[i].nome)
+        }
+    }
+
+    return novoArray
+}
+
+console.log("\nUsando meu próprio filter:")
+
+const itensValidos2 = carrinho.meuFilter(qtdMaiorQueZero)
+console.log(itensValidos2)
 
