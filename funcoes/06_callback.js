@@ -33,9 +33,25 @@ console.log("Produtos no carrinho:\n", produtosCarrinho, "\n");
 console.log("Preço a pagar por produto:\n", precoPorProduto, "\n");
 
 // Resolução do professor:
-console.log("Resolução do professor:")
+console.log("Resolução do professor:");
 const getNome = (item) => item.nome;
 console.log(carrinho.map(getNome));
 
 const getTotal = (item) => item.qtde * item.preco;
 console.log(carrinho.map(getTotal));
+
+console.log("\n");
+// Criando meu próprio map
+// Como um map funciona por dentro?
+
+Array.prototype.meuMap = function (fn) {
+  const novoArray = [];
+
+  for (let i = 0; i < this.length; i++) {
+    const resultado = fn(this[i], i, this);
+    novoArray.push(resultado);
+  }
+  return novoArray;
+};
+
+console.log("Meu próprio map\n", carrinho.meuMap(getNome));
