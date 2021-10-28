@@ -17,3 +17,25 @@ const carrinho = [
   { nome: "Lapis", qtde: 3, preco: 5.82 },
   { nome: "Tesoura", qtde: 1, preco: 19.2 },
 ];
+
+// Desafio:
+// Criar duas funções que vão mapear
+// Um array só com os nomes
+// Um array multiplicando a quantidade pelo preço
+
+const produtoNome = (x) => x.nome;
+const precoQuantidade = (x) => x.qtde * x.preco;
+
+const produtosCarrinho = carrinho.map(produtoNome);
+const precoPorProduto = carrinho.map(precoQuantidade);
+
+console.log("Produtos no carrinho:\n", produtosCarrinho, "\n");
+console.log("Preço a pagar por produto:\n", precoPorProduto, "\n");
+
+// Resolução do professor:
+console.log("Resolução do professor:")
+const getNome = (item) => item.nome;
+console.log(carrinho.map(getNome));
+
+const getTotal = (item) => item.qtde * item.preco;
+console.log(carrinho.map(getTotal));
