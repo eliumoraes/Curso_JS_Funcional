@@ -37,3 +37,11 @@ console.log("\nUsando meu próprio filter:")
 const itensValidos2 = carrinho.meuFilter(qtdMaiorQueZero)
 console.log(itensValidos2)
 
+for (i in carrinho) {
+    console.log("item: ", carrinho[i])
+}
+
+// let ListaFrutas = ["Maçã", "Morango", "Laranja"];
+
+// const FrutasQueIniciamComM = ListaFrutas.filter(x => x.charAt(0) === 'M')
+// console.log(FrutasQueIniciamComM)
